@@ -19,7 +19,8 @@ kotlin {
         version = "1.0.0"
         summary = "Shared framework for KMP app"
         homepage = ""
-        //ios.deploymentTarget = "15.3"
+        //should be equal with # platform :ios, '12.0' in Podfile
+        ios.deploymentTarget = "12.0"
         podfile = project.file("../iosApp/Podfile")
 
         framework {
@@ -37,12 +38,11 @@ kotlin {
         // Maps custom Xcode configuration to NativeBuildType
         xcodeConfigurationToNativeBuildType["CUSTOM_DEBUG"] = NativeBuildType.DEBUG
         xcodeConfigurationToNativeBuildType["CUSTOM_RELEASE"] = NativeBuildType.RELEASE
-    }
 
-    androidTarget {
-        @OptIn(ExperimentalKotlinGradlePluginApi::class)
-        compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_11)
+
+        pod("GoogleMaps") {
+            version = "6.1.0"
+            extraOpts += listOf("-compiler-option", "-fmodules")
         }
     }
     
@@ -58,10 +58,14 @@ kotlin {
     }
     
     sourceSets {
-        
+        iosMain.dependencies {
+
+        }
+
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+            implementation(libs.maps.compose)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -73,9 +77,12 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
         }
+    }
 
-        iosMain.dependencies {
-
+    androidTarget {
+        @OptIn(ExperimentalKotlinGradlePluginApi::class)
+        compilerOptions {
+            jvmTarget.set(JvmTarget.JVM_11)
         }
     }
 }
