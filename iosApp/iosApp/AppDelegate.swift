@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import GoogleMaps
 
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
