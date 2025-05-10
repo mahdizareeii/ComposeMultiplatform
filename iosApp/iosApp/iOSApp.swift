@@ -5,7 +5,6 @@ import GoogleMaps
 struct iOSApp: App {
     var body: some Scene {
         WindowGroup {
-            GMSServices.provideAPIKey("YOUR_API_KEY")
             ContentView()
         }
     }

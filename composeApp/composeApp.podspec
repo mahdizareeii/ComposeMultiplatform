@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
     spec.summary                  = 'Shared framework for KMP app'
     spec.vendored_frameworks      = 'build/cocoapods/framework/SharedFramework.framework'
     spec.libraries                = 'c++'
-    spec.ios.deployment_target    = '12.0'
+    spec.ios.deployment_target    = '15.3'
     spec.dependency 'GoogleMaps', '6.1.0'
                 
     if !Dir.exist?('build/cocoapods/framework/SharedFramework.framework') || Dir.empty?('build/cocoapods/framework/SharedFramework.framework')

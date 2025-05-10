@@ -5,11 +5,10 @@
 //  Created by Mahdi Zareei on 5/10/25.
 //  Copyright © 2025 orgName. All rights reserved.
 //
-
+import Foundation
 import UIKit
 import GoogleMaps
 
-@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 

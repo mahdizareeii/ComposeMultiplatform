@@ -12,6 +12,10 @@ plugins {
 
 kotlin {
 
+    //add this into your gradle properties to avoid getting the following error
+    //Incompatible 'embedAndSign' Task with Pod Dependencies
+    //kotlin.apple.deprecated.allowUsingEmbedAndSignWithCocoaPodsDependencies=true
+
     //navigate to ios app of the project and do these commands
     //pod init
     //pod install
@@ -19,8 +23,11 @@ kotlin {
         version = "1.0.0"
         summary = "Shared framework for KMP app"
         homepage = ""
-        //should be equal with # platform :ios, '12.0' in Podfile
-        ios.deploymentTarget = "12.0"
+        //should be equal with
+        //# platform :ios, '12.0' in Podfile and
+        //ios minimum deployment in xcode
+        //spec.ios.deployment_target in composeApp.podspec in the project
+        ios.deploymentTarget = "15.3"
         podfile = project.file("../iosApp/Podfile")
 
         framework {
@@ -36,8 +43,8 @@ kotlin {
         }
 
         // Maps custom Xcode configuration to NativeBuildType
-        xcodeConfigurationToNativeBuildType["CUSTOM_DEBUG"] = NativeBuildType.DEBUG
-        xcodeConfigurationToNativeBuildType["CUSTOM_RELEASE"] = NativeBuildType.RELEASE
+        //xcodeConfigurationToNativeBuildType["CUSTOM_DEBUG"] = NativeBuildType.DEBUG
+        //xcodeConfigurationToNativeBuildType["CUSTOM_RELEASE"] = NativeBuildType.RELEASE
 
 
         pod("GoogleMaps") {
