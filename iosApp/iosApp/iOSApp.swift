@@ -6,7 +6,8 @@ struct iOSApp: App {
     var body: some Scene {
         WindowGroup {
             initGoogleMap()
-            ContentView()
+            ComposeContentView()
+            //NativeGoogleMapView()
         }
     }
 }
