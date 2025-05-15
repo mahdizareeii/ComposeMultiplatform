@@ -15,6 +15,7 @@ Core Tech Stack
 Kotlin Multiplatform: Write once, run on both platforms
 
 Jetpack Compose: Modern UI toolkit
+
 Koin: Lightweight DI framework
 
 Ktor: HTTP client for networking
