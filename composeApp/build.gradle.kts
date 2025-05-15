@@ -23,7 +23,7 @@ kotlin {
         summary = "Shared framework for KMP app"
         homepage = ""
         //should be equal with
-        //# platform :ios, '12.0' in Podfile and
+        //# platform :ios, '15.3' in Podfile and
         //ios minimum deployment in xcode
         //spec.ios.deployment_target in composeApp.podspec in the project
         ios.deploymentTarget = "15.3"
@@ -38,7 +38,7 @@ kotlin {
             // Dependency export
             // Uncomment and specify another project module if you have one:
             // export(project(":<your other KMP module>"))
-            transitiveExport = false // This is default.
+            //transitiveExport = false // This is default.
         }
 
         // Maps custom Xcode configuration to NativeBuildType
@@ -99,12 +99,18 @@ kotlin {
     androidTarget { compilerOptions { jvmTarget.set(JvmTarget.JVM_11) } }
 }
 
+compose.resources {
+    publicResClass = false
+    packageOfResClass = libs.plugins.libsPackageName.get().pluginId + "resources"
+    generateResClass = auto
+}
+
 android {
-    namespace = "org.cmp.app"
+    namespace = libs.plugins.libsPackageName.get().pluginId
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "org.cmp.app"
+        applicationId = libs.plugins.libsPackageName.get().pluginId
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1

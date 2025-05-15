@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 import org.cmp.app.core.base.BaseUiState
 import org.cmp.app.core.base.SafeResult
 import org.cmp.app.core.domain.usecase.GetProductUseCase
-import org.cmp.app.screens.ProductUiState
+import org.cmp.app.screen.product.ProductUiState
 
 class ProductViewModel(
     private val getProductUseCase: GetProductUseCase

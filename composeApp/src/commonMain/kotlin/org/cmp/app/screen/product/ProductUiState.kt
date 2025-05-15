@@ -1,4 +1,4 @@
-package org.cmp.app.screens
+package org.cmp.app.screen.product
 
 import org.cmp.app.core.domain.model.Product
 

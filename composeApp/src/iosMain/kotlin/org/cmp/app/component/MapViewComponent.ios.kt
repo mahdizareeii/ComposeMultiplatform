@@ -1,6 +1,5 @@
-package org.cmp.app.components
+package org.cmp.app.component
 
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.UIKitView
@@ -10,9 +9,9 @@ import kotlinx.cinterop.ExperimentalForeignApi
 //Call the GMSServices.provideAPIKey("YOUR_API_KEY") in your AppDelegate of ios app base on the documentation
 @OptIn(ExperimentalForeignApi::class)
 @Composable
-actual fun MapViewComponent() {
+actual fun MapViewComponent(modifier: Modifier) {
     UIKitView(
-        modifier = Modifier.fillMaxSize(),
+        modifier = modifier,
         factory = {
             GMSMapView()
         },

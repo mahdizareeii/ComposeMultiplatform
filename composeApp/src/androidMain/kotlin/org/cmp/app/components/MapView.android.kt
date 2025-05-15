@@ -1,9 +1,0 @@
-package org.cmp.app.components
-
-import androidx.compose.runtime.Composable
-import com.google.maps.android.compose.GoogleMap
-
-@Composable
-actual fun MapViewComponent() {
-    GoogleMap()
-}

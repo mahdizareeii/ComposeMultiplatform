@@ -1,0 +1,11 @@
+<resources>
+    <!--https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-resources-usage.html#strings-->
+    <!--Currently, arguments have basic support for string resources.
+     When creating a template, use the %<number> format
+     to place arguments within the string and include a $d or $s suffix
+     to indicate that it is a variable placeholder and not simple text-->
+    <string name="app_name">Compose Multiplatform</string>
+    <string name="hi_platform">Hello %1$s</string>
+    <string name="listing">Listing</string>
+    <string name="map">Map</string>
+</resources>

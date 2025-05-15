@@ -1,4 +1,4 @@
-package org.cmp.app.components
+package org.cmp.app.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

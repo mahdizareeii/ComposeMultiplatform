@@ -18,6 +18,7 @@ kotlin = "2.1.20"
 koin = "4.0.4"
 mapsCompose = "6.1.0"
 ktor-client = "3.1.0"
+navigationCompose = "2.9.0-beta01"
 
 [libraries]
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coilCompose" }
@@ -50,9 +51,12 @@ ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "k
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor-client" }
 ktor-client-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor-client" }
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor-client" }
+navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 
 
 [plugins]
+libsPackageName = { id = "org.cmp.app" }
+
 kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version = "1.9.10" }
 
 androidApplication = { id = "com.android.application", version.ref = "agp" }
