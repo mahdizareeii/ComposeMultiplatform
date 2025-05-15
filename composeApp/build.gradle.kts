@@ -72,6 +72,8 @@ kotlin {
             implementation(libs.ktor.client.okhttp)
         }
         commonMain.dependencies {
+            //implementation("org.jetbrains.androidx.savedstate:savedstate:1.3.0-beta01")
+            implementation(libs.navigation.compose)
             implementation(libs.koin.core)
             implementation(libs.koin.android.compose)
             implementation(libs.koin.android.viewmodel)
