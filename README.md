@@ -6,11 +6,6 @@ This is a Kotlin Multiplatform project targeting Android, iOS.
   <img src="https://github.com/mahdizareeii/ComposeMultiplatform/blob/main/screenshot/screen_shot_map_screen.png" width="50%" title="Map Screen" />
 </p>
 
-<p align="center">
-  <div width="50%" title="" />
-  <img src="https://github.com/mahdizareeii/ComposeMultiplatform/blob/main/screenshot/screen_shot_home_screen.png" width="50%" title="Home Screen" />
-</p>
-
 What's Inside
 Kotlin Multiplatform (KMP) setup
 Jetpack Compose for cross-platform UI
