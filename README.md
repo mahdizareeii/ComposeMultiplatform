@@ -1,5 +1,12 @@
 This is a Kotlin Multiplatform project targeting Android, iOS.
 
+
+<p align="center">
+  <img src="https://github.com/mahdizareeii/ComposeMultiplatform/blob/main/screenshot/screen_shot_home_screen.png" width="30%" title="Home Screen" />
+  <img src="https://github.com/mahdizareeii/ComposeMultiplatform/blob/main/screenshot/screen_shot_listing_screen.png" width="30%" title="Listing Screen" />
+  <img src="https://github.com/mahdizareeii/ComposeMultiplatform/blob/main/screenshot/screen_shot_map_screen.png" width="30%" title="Map Screen" />
+</p>
+
 What's Inside
 Kotlin Multiplatform (KMP) setup
 Jetpack Compose for cross-platform UI
@@ -49,6 +56,9 @@ composeApp/
   - **UI Components**: Shared Compose components with platform-specific adaptations
 
 
+
+
+
 * `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
   It contains several subfolders:
   - `commonMain` is for code that’s common for all targets.
@@ -58,11 +68,5 @@ composeApp/
 
 * `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform, 
   you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
-
-
-![Demo screenshot](https://github.com/mahdizareeii/ComposeMultiplatform/blob/main/screenshot/screen_shot_home_screen.png)
-![Demo screenshot](https://github.com/mahdizareeii/ComposeMultiplatform/blob/main/screenshot/screen_shot_listing_screen.png)
-![Demo screenshot](https://github.com/mahdizareeii/ComposeMultiplatform/blob/main/screenshot/screen_shot_map_screen.png)
-
 
 Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
