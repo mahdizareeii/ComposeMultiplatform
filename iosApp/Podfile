@@ -6,6 +6,6 @@ target 'iosApp' do
   use_frameworks!
 
   # Pods for iosApp
-  pod 'GoogleMaps', '9.3.0'
-  pod 'Google-Maps-iOS-Utils', '3.4.0'
+  pod 'GoogleMaps', '9.4.0'
+  pod 'Google-Maps-iOS-Utils', '6.1.0'
 end

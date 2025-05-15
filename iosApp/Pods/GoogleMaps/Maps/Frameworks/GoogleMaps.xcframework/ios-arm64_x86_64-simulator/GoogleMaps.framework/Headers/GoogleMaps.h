@@ -1,5 +1,3 @@
-#import <GoogleMaps/GMSIndoorBuilding.h>
-#import <GoogleMaps/GMSIndoorLevel.h>
 #import <GoogleMaps/GMSCompatabilityMacros.h>
 #import <GoogleMaps/GMSCoordinateBounds.h>
 #import <GoogleMaps/GMSDeprecationMacros.h>
@@ -20,7 +18,9 @@
 #import <GoogleMaps/GMSGeocoder.h>
 #import <GoogleMaps/GMSGeometryUtils.h>
 #import <GoogleMaps/GMSGroundOverlay.h>
+#import <GoogleMaps/GMSIndoorBuilding.h>
 #import <GoogleMaps/GMSIndoorDisplay.h>
+#import <GoogleMaps/GMSIndoorLevel.h>
 #import <GoogleMaps/GMSMapID.h>
 #import <GoogleMaps/GMSMapLayer.h>
 #import <GoogleMaps/GMSMapStyle.h>

@@ -10,8 +10,10 @@
 
 #import <Foundation/Foundation.h>
 
-@class GMSIndoorBuilding;
+
+
 @class GMSIndoorLevel;
+@class GMSIndoorBuilding;
 
 NS_ASSUME_NONNULL_BEGIN
 
