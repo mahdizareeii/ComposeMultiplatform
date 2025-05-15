@@ -1,15 +1,22 @@
 import SwiftUI
 import GoogleMaps
+import ComposeApp
 
 @main
 struct iOSApp: App {
     var body: some Scene {
         WindowGroup {
+            initKoinDi()
             initGoogleMap()
             ComposeContentView()
             //NativeGoogleMapView()
         }
     }
+}
+
+private func initKoinDi()-> some View {
+    KoinModuleKt.doInitKoin { koinContext in }
+    return EmptyView()
 }
 
 private func initGoogleMap() -> some View {

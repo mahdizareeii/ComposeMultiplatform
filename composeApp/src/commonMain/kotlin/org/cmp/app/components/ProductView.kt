@@ -1,6 +1,5 @@
 package org.cmp.app.components
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -10,12 +9,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
-import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -24,9 +20,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import coil3.compose.AsyncImagePainter
-import coil3.compose.SubcomposeAsyncImage
-import coil3.compose.rememberAsyncImagePainter
 import org.cmp.app.core.domain.model.Product
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -44,57 +37,18 @@ fun ProductView(product: Product) {
             modifier = Modifier.padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-/*            AsyncImage(
+            AsyncImage(
                 model = product.image,
                 contentDescription = product.title,
                 contentScale = ContentScale.Crop,
-                modifier = Modifier.fillMaxWidth().height(200.dp)
-            )*/
-           /* val painter = rememberAsyncImagePainter(product.image)
-            val state by painter.state.collectAsState()
-
-            when (val result = state) {
-                is AsyncImagePainter.State.Empty,
-                is AsyncImagePainter.State.Loading -> {
-                    CircularProgressIndicator()
-                }
-
-                is AsyncImagePainter.State.Success -> {
-                    Image(
-                        painter = painter,
-                        contentDescription = product.title,
-
-                    )
-                }
-
-                is AsyncImagePainter.State.Error -> {
-                    // Show some error UI.
-                    Text(result.result.throwable.message.toString())
-                }
-            }*/
-            /*SubcomposeAsyncImage(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(200.dp)
                     .background(Color.LightGray),
-                model = product.image,
-                contentDescription = product.title,
                 onError = {
                     println("Image failed to load: ${it.result.throwable.message}")
                 }
-            )*/
-             AsyncImage(
-                 model = product.image,
-                 contentDescription = product.title,
-                 contentScale = ContentScale.Crop,
-                 modifier = Modifier
-                     .fillMaxWidth()
-                     .height(200.dp)
-                     .background(Color.LightGray),
-                 onError = {
-                     println("Image failed to load: ${it.result.throwable.message}")
-                 }
-             )
+            )
 
             Text(
                 text = product.title,
