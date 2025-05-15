@@ -2,9 +2,13 @@ This is a Kotlin Multiplatform project targeting Android, iOS.
 
 
 <p align="center">
-  <img src="https://github.com/mahdizareeii/ComposeMultiplatform/blob/main/screenshot/screen_shot_home_screen.png" width="30%" title="Home Screen" />
-  <img src="https://github.com/mahdizareeii/ComposeMultiplatform/blob/main/screenshot/screen_shot_listing_screen.png" width="30%" title="Listing Screen" />
-  <img src="https://github.com/mahdizareeii/ComposeMultiplatform/blob/main/screenshot/screen_shot_map_screen.png" width="30%" title="Map Screen" />
+  <img src="https://github.com/mahdizareeii/ComposeMultiplatform/blob/main/screenshot/screen_shot_listing_screen.png" width="50%" title="Listing Screen" />
+  <img src="https://github.com/mahdizareeii/ComposeMultiplatform/blob/main/screenshot/screen_shot_map_screen.png" width="50%" title="Map Screen" />
+</p>
+
+<p align="center">
+  <div width="50%" title="" />
+  <img src="https://github.com/mahdizareeii/ComposeMultiplatform/blob/main/screenshot/screen_shot_home_screen.png" width="50%" title="Home Screen" />
 </p>
 
 What's Inside
