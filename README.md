@@ -13,10 +13,14 @@ Real architecture with actual code structure
 
 Core Tech Stack
 Kotlin Multiplatform: Write once, run on both platforms
+
 Jetpack Compose: Modern UI toolkit
 Koin: Lightweight DI framework
+
 Ktor: HTTP client for networking
+
 Coil: Image loading
+
 Google Maps: Map integration
 
 ```
