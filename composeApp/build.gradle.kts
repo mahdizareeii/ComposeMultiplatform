@@ -1,6 +1,4 @@
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -8,6 +6,7 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.kotlinCocoapods)
+    alias(libs.plugins.kotlinxSerialization)
 }
 
 kotlin {
@@ -52,7 +51,7 @@ kotlin {
             extraOpts += listOf("-compiler-option", "-fmodules")
         }
     }
-    
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -63,18 +62,21 @@ kotlin {
             isStatic = true
         }
     }
-    
+
     sourceSets {
-        iosMain.dependencies {
-
-        }
-
         androidMain.dependencies {
+            implementation(libs.koin.android)
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.maps.compose)
+            implementation(libs.ktor.client.okhttp)
         }
         commonMain.dependencies {
+            implementation(libs.koin.core)
+            implementation(libs.koin.android.compose)
+            implementation(libs.koin.android.viewmodel)
+            implementation(libs.coil.compose)
+            implementation(libs.coil.network.ktor3)
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material)
@@ -83,15 +85,18 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
+            implementation(libs.ktor.client.auth)
+            implementation(libs.ktor.client.logging)
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.json)
+            implementation(libs.ktor.client.content.negotiation)
+        }
+        iosMain.dependencies {
+            implementation(libs.ktor.client.darwin)
         }
     }
 
-    androidTarget {
-        @OptIn(ExperimentalKotlinGradlePluginApi::class)
-        compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_11)
-        }
-    }
+    androidTarget { compilerOptions { jvmTarget.set(JvmTarget.JVM_11) } }
 }
 
 android {

@@ -1,4 +1,4 @@
-package org.cmp.app.googlemap
+package org.cmp.app.components
 
 import androidx.compose.runtime.Composable
 
