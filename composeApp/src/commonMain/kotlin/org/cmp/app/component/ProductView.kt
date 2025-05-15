@@ -2,11 +2,14 @@ package org.cmp.app.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
@@ -81,6 +84,94 @@ fun ProductView(product: Product) {
         }
     }
 }
+
+@Preview
+@Composable
+fun ProductSkeletonView() {
+    LazyColumn {
+        repeat(5) {
+            item {
+                Spacer(Modifier.size(2.5.dp))
+                ProductSkeletonViewItem()
+                Spacer(Modifier.size(2.5.dp))
+            }
+        }
+    }
+}
+
+@Preview
+@Composable
+fun ProductSkeletonViewItem() {
+    Card(
+        modifier = Modifier
+            .padding(16.dp)
+            .fillMaxWidth(),
+        shape = RoundedCornerShape(12.dp),
+        elevation = 6.dp
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(200.dp)
+                    .background(
+                        brush = shimmerBrush(targetValue = 1300f),
+                        shape = RoundedCornerShape(4.dp)
+                    )
+            )
+
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth(0.6f)
+                    .height(24.dp)
+                    .background(
+                        brush = shimmerBrush(targetValue = 1300f),
+                        shape = RoundedCornerShape(4.dp)
+                    )
+            )
+
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth(0.4f)
+                    .height(18.dp)
+                    .background(
+                        brush = shimmerBrush(targetValue = 1300f),
+                        shape = RoundedCornerShape(4.dp)
+                    )
+            )
+
+            Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                repeat(3) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(14.dp)
+                            .background(
+                                brush = shimmerBrush(targetValue = 1300f),
+                                shape = RoundedCornerShape(4.dp)
+                            )
+                    )
+                }
+            }
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth(0.5f)
+                    .height(12.dp)
+                    .background(
+                        brush = shimmerBrush(targetValue = 1300f),
+                        shape = RoundedCornerShape(4.dp)
+                    )
+            )
+        }
+    }
+}
+
 
 @Preview
 @Composable

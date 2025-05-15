@@ -12,12 +12,16 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import org.cmp.app.component.ProductSkeletonView
 import org.cmp.app.component.ProductView
+import org.cmp.app.component.TryAgainView
 import org.cmp.app.core.base.BaseUiState
 import org.cmp.app.core.viewmodel.ProductViewModel
+import org.cmp.appresources.Res
+import org.cmp.appresources.internet_connection_error
+import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
 
-//TODO hande error , loading
 @Composable
 fun ProductScreen(
     modifier: Modifier = Modifier,
@@ -27,21 +31,23 @@ fun ProductScreen(
     val uiState by viewModel.uiState.collectAsState()
     when (val state = uiState) {
         is BaseUiState.InitialUiState -> viewModel.getProducts()
-        is BaseUiState.EmptyUiState -> {
-
-        }
-
-        is BaseUiState.ErrorUiState -> {
-
-        }
-
-        is BaseUiState.LoadingUiState -> {
-
-        }
-
+        is BaseUiState.EmptyUiState -> {}
+        is BaseUiState.ErrorUiState -> {}
+        is BaseUiState.LoadingUiState -> {}
         is BaseUiState.SuccessUiState -> {
             productUiState = state.state
         }
+    }
+
+    if (uiState is BaseUiState.ErrorUiState) {
+        TryAgainView(
+            message = stringResource(Res.string.internet_connection_error),
+            onRetry = { viewModel.getProducts() }
+        )
+    }
+
+    if (uiState is BaseUiState.LoadingUiState) {
+        ProductSkeletonView()
     }
 
     LazyColumn(modifier) {
