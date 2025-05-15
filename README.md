@@ -29,6 +29,25 @@ composeApp/
 │   └── iosMain/                      # iOS-specific code
 ```
 
+## 🔑 Key Features
+
+- **Platform-Specific Code**
+  - Uses `expect`/`actual` declarations for platform-specific implementations
+  - Example: `MapViewComponent` has different implementations for Android and iOS
+
+- **Clean Architecture**
+  - **Domain layer**: Business logic and models
+  - **Data layer**: Network and local storage
+  - **Presentation layer**: UI components and screens
+
+- **Dependency Injection**
+  - Uses **Koin** for managing dependencies
+  - Separate modules for different features
+
+- **Real Implementation Details**
+  - **Network Layer**: Ktor client with platform-specific engines
+  - **UI Components**: Shared Compose components with platform-specific adaptations
+
 
 * `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
   It contains several subfolders:
